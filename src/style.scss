@@ -1,0 +1,107 @@
+$fontSize: 4rem;
+$fontColor: #ff2349;
+$bgColor: #111111;
+$borderSize: 3px;
+$time: 0.5s;
+
+html {
+  background-color: $bgColor;
+  height: 100%;
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  font-size: $fontSize;
+  height: 100%;
+  color: $fontColor;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.info {
+  padding: 10px;
+  text-align: right;
+  font-size: $fontSize / 4;
+  border-top: $borderSize $fontColor solid;
+}
+
+.content {
+  height: 100%;
+  position: relative;
+  margin: 45px;
+}
+
+.show {
+  display: block !important;
+}
+
+a {
+  text-decoration-color: $fontColor;
+
+  &:visited {
+    color: $fontColor;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+#Answer {
+  background-color: $bgColor;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: opacity $time ease-in;
+}
+
+.button {
+  text-decoration: none;
+  border: $borderSize solid $fontColor;
+  padding: 15px;
+  position: absolute;
+  bottom: 45px + 45px;
+  right: 0;
+  transition: color $time ease-in, border-color $time ease-in,
+    opacity $time ease-in;
+
+  &.disabled {
+    border-color: gray;
+    color: gray;
+    opacity: 0.7;
+
+    &:visited {
+      color: gray;
+    }
+
+    &:hover {
+      color: gray;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#Input {
+  border: none;
+  background-color: $bgColor;
+  border-bottom: none;
+  font-size: $fontSize;
+  font-weight: bold;
+  color: $fontColor;
+  text-transform: uppercase;
+
+  &:focus {
+    outline: none;
+  }
+}
