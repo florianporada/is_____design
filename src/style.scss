@@ -32,11 +32,17 @@ body {
 }
 
 .show {
-  display: block !important;
+  opacity: 1 !important;
+  z-index: 1 !important;
+}
+
+.hide {
+  opacity: 0 !important;
 }
 
 a {
   text-decoration-color: $fontColor;
+  color: $fontColor;
 
   &:visited {
     color: $fontColor;
@@ -47,10 +53,18 @@ a {
   }
 }
 
+#Question {
+  opacity: 1;
+  transition: opacity $time ease-in;
+  display: flex;
+  flex-direction: column;
+}
+
 #Answer {
   background-color: $bgColor;
-  display: none;
+  z-index: -1;
   position: absolute;
+  opacity: 0;
   left: 0;
   top: 0;
   height: 100%;
@@ -58,6 +72,20 @@ a {
   justify-content: center;
   align-items: center;
   transition: opacity $time ease-in;
+}
+
+#Input {
+  border: none;
+  background-color: $bgColor;
+  border-bottom: none;
+  font-size: $fontSize;
+  font-weight: bold;
+  color: $fontColor;
+  text-transform: uppercase;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .button {
@@ -86,22 +114,13 @@ a {
   }
 }
 
-.input-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
+@media (max-width: 768px) {
+  body,
+  #Input {
+    font-size: $fontSize / 1.5;
+  }
 
-#Input {
-  border: none;
-  background-color: $bgColor;
-  border-bottom: none;
-  font-size: $fontSize;
-  font-weight: bold;
-  color: $fontColor;
-  text-transform: uppercase;
-
-  &:focus {
-    outline: none;
+  .info {
+    font-size: $fontSize / 3;
   }
 }

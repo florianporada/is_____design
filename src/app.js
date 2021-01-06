@@ -7,7 +7,8 @@ function decisionLogic() {
 function init() {
   const btnAsk = document.getElementById('Ask');
   const btnThanks = document.getElementById('Thanks');
-  const wrapper = document.getElementById('Answer');
+  const answerContent = document.getElementById('Answer');
+  const questionContent = document.getElementById('Question');
   const input = document.getElementById('Input');
 
   input.focus();
@@ -34,14 +35,18 @@ function init() {
     const span = document.getElementById('Answertext');
 
     span.innerText = answer ? 'Yes' : 'No';
-    input.innerText = '';
 
     btnAsk.classList.add('disabled');
-    wrapper.classList.add('show');
+    questionContent.classList.add('hide');
+    setTimeout(() => {
+      answerContent.classList.add('show');
+      input.innerText = '';
+    }, 500);
   };
 
   btnThanks.onclick = () => {
-    wrapper.classList.remove('show');
+    answerContent.classList.remove('show');
+    questionContent.classList.remove('hide');
     input.focus();
   };
 }
