@@ -19,7 +19,10 @@ body {
 }
 
 .info {
-  padding: 10px;
+  margin-left: 45px;
+  margin-right: 45px;
+  padding-top: 45px;
+  padding-bottom: 45px;
   text-align: right;
   font-size: $fontSize / 4;
   border-top: $borderSize $fontColor solid;
@@ -33,11 +36,16 @@ body {
 
 .show {
   opacity: 1 !important;
-  z-index: 1 !important;
+  z-index: 999 !important;
 }
 
 .hide {
   opacity: 0 !important;
+  z-index: -999 !important;
+}
+
+.display-none {
+  display: none;
 }
 
 a {
@@ -61,17 +69,13 @@ a {
 }
 
 #Answer {
-  background-color: $bgColor;
-  z-index: -1;
-  position: absolute;
   opacity: 0;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
   justify-content: center;
   align-items: center;
   transition: opacity $time ease-in;
+  border-top: 4px $fontColor solid;
+  padding-top: 45px;
+  margin-top: 45px;
 }
 
 #Input {

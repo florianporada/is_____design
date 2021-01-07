@@ -18,11 +18,12 @@ function init() {
   const btnAsk = document.getElementById('Ask');
   const btnThanks = document.getElementById('Thanks');
   const answerContent = document.getElementById('Answer');
-  const questionContent = document.getElementById('Question');
   const input = document.getElementById('Input');
+  const span = document.getElementById('Answertext');
 
   input.focus();
   input.addEventListener('input', updateValue);
+  answerContent.classList.remove('display-none');
 
   function updateValue() {
     const currentInput = document.getElementById('Input').innerText;
@@ -42,24 +43,32 @@ function init() {
     }
 
     decisionLogic().then((answer) => {
-      const span = document.getElementById('Answertext');
-
-      span.innerText = answer ? 'Yes' : 'No';
+      span.innerText = answer ? 'Yes.' : 'No.';
 
       btnAsk.classList.add('disabled');
-      questionContent.classList.add('hide');
+      btnAsk.classList.add('hide');
+      input.setAttribute('contenteditable', 'false');
 
       setTimeout(() => {
         answerContent.classList.add('show');
-        input.innerText = '';
+        answerContent.classList.remove('hide');
+        btnAsk.classList.remove('show');
       }, 500);
     });
   };
 
   btnThanks.onclick = () => {
-    answerContent.classList.remove('show');
-    questionContent.classList.remove('hide');
-    input.focus();
+    answerContent.classList.add('hide');
+
+    setTimeout(() => {
+      btnAsk.classList.remove('hide');
+      btnAsk.classList.add('show');
+      input.setAttribute('contenteditable', 'true');
+      input.focus();
+
+      span.innerText = '';
+      input.innerText = '';
+    }, 500);
   };
 }
 
