@@ -1,7 +1,17 @@
 import './style.scss';
 
 function decisionLogic() {
-  return Math.random() < 0.5;
+  const url =
+    'https://www.random.org/integers/?num=1&min=0&max=1&col=1&base=10&format=plain&rnd=new';
+  return fetch(url)
+    .then((response) => {
+      return response.text().then((text) => {
+        return text === '0' ? false : true;
+      });
+    })
+    .catch(() => {
+      return Math.random() < 0.5;
+    });
 }
 
 function init() {
@@ -31,17 +41,19 @@ function init() {
       return;
     }
 
-    const answer = decisionLogic();
-    const span = document.getElementById('Answertext');
+    decisionLogic().then((answer) => {
+      const span = document.getElementById('Answertext');
 
-    span.innerText = answer ? 'Yes' : 'No';
+      span.innerText = answer ? 'Yes' : 'No';
 
-    btnAsk.classList.add('disabled');
-    questionContent.classList.add('hide');
-    setTimeout(() => {
-      answerContent.classList.add('show');
-      input.innerText = '';
-    }, 500);
+      btnAsk.classList.add('disabled');
+      questionContent.classList.add('hide');
+
+      setTimeout(() => {
+        answerContent.classList.add('show');
+        input.innerText = '';
+      }, 500);
+    });
   };
 
   btnThanks.onclick = () => {
