@@ -1,18 +1,16 @@
-# Is \_\_\_\_\_ Design?
+# [Is \_\_\_\_\_ design?](https://isblankdesign.florianporada.com 'Is _____ design? Website')
 
-[Is _____ design?](https://isblankdesign.florianporada.com "Is _____ design? Website")
-
-![Logo of the website](https://github.com/florianporada/isblankdesign/raw/main/assets/android-chrome-512x512.png "Logo of the website")
+![Logo of the website](https://github.com/florianporada/isblankdesign/raw/main/assets/android-chrome-512x512.png 'Logo of the website')
 
 ## Description
 
-A website for answering the question about what design is and what isn't. 
+A website for answering the question about what design is.
 
-## Decision logic
+## Motivation
 
-If you want to get a glimpse in the complex code which decides if \_\_\_\_\_ is in the realm of design, here it is: [decision logic](https://github.com/florianporada/isblankdesign/blob/8cc6b141e3243b74466af00a8d2491f7d50ddcc5/src/app.js#L3
- "decision logic")
+Design is such a vague term. Everybody who works in the field or tries to define it automatically adds borders to include or exclude something.
 
+If you want to get a glimpse in the complex code which decides if \_\_\_\_\_ is in the realm of design, here you go: [Destroy the magic](https://github.com/florianporada/isblankdesign/ 'Destroy the magic')
 
 ## License
 
