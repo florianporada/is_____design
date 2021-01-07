@@ -2,6 +2,7 @@
 
 [Is _____ design?](https://isblankdesign.florianporada.com "Is _____ design? Website")
 
+![Logo of the website](https://github.com/florianporada/isblankdesign/raw/main/assets/android-chrome-512x512.png "Logo of the website")
 
 ## Description
 
