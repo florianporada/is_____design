@@ -6,7 +6,7 @@ function decisionLogic() {
   return fetch(url)
     .then((response) => {
       return response.text().then((text) => {
-        return text === '0' ? false : true;
+        return parseInt(text, 10);
       });
     })
     .catch(() => {
