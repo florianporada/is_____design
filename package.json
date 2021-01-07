@@ -1,7 +1,7 @@
 {
-  "name": "babel_webpack_starter",
+  "name": "is_____design",
   "version": "1.0.0",
-  "description": "Starter pack for compiling ES6+ apps to ES5",
+  "description": "A website for answering the question about what design is and isn't",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "start:mobile": "webpack-dev-server --output-public-path=/build/ --mode development --progress --open --hot --host 0.0.0.0 --https",
     "build": "webpack --mode production --progress"
   },
-  "author": "Brad Traversy",
+  "author": "florianporada",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.3",
